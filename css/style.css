@@ -392,15 +392,19 @@ ul {
   position: absolute;
   inset: 0;
   background: linear-gradient(135deg, var(--gray-950) 0%, var(--gray-800) 50%, var(--gray-900) 100%);
-  background-size: 105%;
+  background-size: cover;
   background-position: center;
-  transition: background-size 8s ease;
+  transform: scale(1.05);
+  transition: transform 8s ease;
+  will-change: transform;
 }
 
 
 
-.hero:hover .hero-bg {
-  background-size: 100%;
+@media (hover: hover) {
+  .hero:hover .hero-bg {
+    transform: scale(1);
+  }
 }
 
 .hero-overlay {
@@ -1837,7 +1841,7 @@ ul {
   }
 
   .hero {
-    min-height: 100dvh;
+    min-height: 100vh;
   }
 
   .hero-title {
