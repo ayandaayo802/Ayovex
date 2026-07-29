@@ -281,6 +281,38 @@ document.addEventListener('DOMContentLoaded', () => {
   goToSlide(0);
   startAutoPlay();
 
+  // ---- TESTIMONIAL TOUCH SWIPE ----
+  let touchStartX = 0;
+  let touchEndX = 0;
+
+  track.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+    track.style.transition = 'none';
+  }, { passive: true });
+
+  track.addEventListener('touchmove', (e) => {
+    if (touchStartX === 0) return;
+    touchEndX = e.changedTouches[0].screenX;
+    const diff = touchEndX - touchStartX;
+    const slideWidth = track.children[0].offsetWidth + 16;
+    const offset = currentSlide * slidesPerView * slideWidth;
+    track.style.transform = `translateX(${-offset + diff}px)`;
+  }, { passive: true });
+
+  track.addEventListener('touchend', () => {
+    track.style.transition = '';
+    const diff = touchEndX - touchStartX;
+    touchStartX = 0;
+    touchEndX = 0;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) goToSlide(currentSlide - 1);
+      else goToSlide(currentSlide + 1);
+      resetAutoPlay();
+    } else {
+      goToSlide(currentSlide);
+    }
+  }, { passive: true });
+
   window.addEventListener('resize', () => {
     updateSlidesPerView();
     buildDots();
