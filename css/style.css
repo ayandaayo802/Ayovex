@@ -28,8 +28,8 @@ html {
   --gray-800: #262626;
   --gray-900: #171717;
   --gray-950: #0a0a0a;
-  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-serif: 'Prata', Georgia, serif;
   --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
   --shadow-sm: 0 1px 3px rgba(0,0,0,0.08);
@@ -186,7 +186,7 @@ ul {
 }
 
 .loader-logo {
-  font-family: var(--font-serif);
+  font-family: 'Playfair Display', serif;
   font-size: 3rem;
   font-weight: 700;
   color: var(--white);
@@ -261,7 +261,7 @@ ul {
 }
 
 .logo-main {
-  font-family: var(--font-serif);
+  font-family: 'Playfair Display', serif;
   font-size: 1.5rem;
   font-weight: 700;
   letter-spacing: 4px;
