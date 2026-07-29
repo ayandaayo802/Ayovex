@@ -25,12 +25,16 @@ document.addEventListener('DOMContentLoaded', () => {
   navToggle.addEventListener('click', () => {
     navToggle.classList.toggle('active');
     navMenu.classList.toggle('active');
+    navbar.classList.toggle('menu-open');
+    document.body.classList.toggle('no-scroll');
   });
 
   navLinks.forEach(link => {
     link.addEventListener('click', () => {
       navToggle.classList.remove('active');
       navMenu.classList.remove('active');
+      navbar.classList.remove('menu-open');
+      document.body.classList.remove('no-scroll');
     });
   });
 
