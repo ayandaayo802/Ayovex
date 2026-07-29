@@ -5,12 +5,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
   // ---- LOADER ----
-  const loader = document.getElementById('loader');
   setTimeout(() => {
-    loader.classList.add('hidden');
-    document.body.style.overflow = '';
     initAnimations();
-  }, 2200);
+  }, 2400);
 
   // ---- NAVBAR ----
   const navbar = document.getElementById('navbar');
