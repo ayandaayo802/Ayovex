@@ -1,14 +1,24 @@
+const corsHeaders = {
+  'Access-Control-Allow-Origin': '*',
+  'Access-Control-Allow-Methods': 'POST, OPTIONS',
+  'Access-Control-Allow-Headers': 'Content-Type',
+}
+
 Deno.serve(async (req) => {
+  if (req.method === 'OPTIONS') {
+    return new Response(null, { headers: corsHeaders })
+  }
+
   try {
     const { name, phone, email, service, date, message } = await req.json()
 
     if (!name || !phone || !email || !message) {
-      return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400 })
+      return new Response(JSON.stringify({ error: 'Missing required fields' }), { status: 400, headers: corsHeaders })
     }
 
     const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
     if (!RESEND_API_KEY) {
-      return new Response(JSON.stringify({ error: 'API key not configured' }), { status: 500 })
+      return new Response(JSON.stringify({ error: 'API key not configured' }), { status: 500, headers: corsHeaders })
     }
 
     const html = `
@@ -39,13 +49,13 @@ Deno.serve(async (req) => {
 
     if (!res.ok) {
       const err = await res.text()
-      return new Response(JSON.stringify({ error: `Email API error: ${res.status}` }), { status: 500 })
+      return new Response(JSON.stringify({ error: `Email API error: ${res.status}` }), { status: 500, headers: corsHeaders })
     }
 
     return new Response(JSON.stringify({ success: true }), {
-      headers: { 'Content-Type': 'application/json' },
+      headers: { ...corsHeaders, 'Content-Type': 'application/json' },
     })
   } catch (err) {
-    return new Response(JSON.stringify({ error: String(err) }), { status: 500 })
+    return new Response(JSON.stringify({ error: String(err) }), { status: 500, headers: corsHeaders })
   }
 })
