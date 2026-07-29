@@ -40,7 +40,7 @@ Deno.serve(async (req) => {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'Ayovex Website <noreply@ayovexinterio.co.za>',
+        from: 'Ayovex Website <quotes@ayovexinterio.co.za>',
         to: ['quotes@ayovexinterio.co.za'],
         subject: 'New Quote Request - Ayovex Interior',
         html,
