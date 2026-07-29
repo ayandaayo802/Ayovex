@@ -399,14 +399,6 @@ ul {
   will-change: transform;
 }
 
-
-
-@media (hover: hover) {
-  .hero:hover .hero-bg {
-    transform: scale(1);
-  }
-}
-
 .hero-overlay {
   position: absolute;
   inset: 0;
@@ -457,48 +449,6 @@ ul {
   gap: 16px;
   justify-content: center;
   flex-wrap: wrap;
-}
-
-.hero-scroll {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 12px;
-  z-index: 2;
-}
-
-.hero-scroll span {
-  font-size: 0.7rem;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: var(--gray-400);
-}
-
-.scroll-line {
-  width: 1px;
-  height: 40px;
-  background: var(--gray-600);
-  position: relative;
-  overflow: hidden;
-}
-
-.scroll-line::after {
-  content: '';
-  position: absolute;
-  top: -100%;
-  width: 100%;
-  height: 100%;
-  background: var(--white);
-  animation: scrollDown 1.5s ease infinite;
-}
-
-@keyframes scrollDown {
-  0% { top: -100%; }
-  100% { top: 100%; }
 }
 
 /* ============================================
@@ -902,7 +852,19 @@ ul {
 .lightbox-location {
   font-size: 0.85rem;
   color: var(--gray-400);
+  margin-bottom: 4px;
+}
+
+.lightbox-meta {
+  display: flex;
+  gap: 12px;
   margin-bottom: 16px;
+}
+
+.lightbox-index {
+  font-size: 0.75rem;
+  color: var(--gray-500);
+  letter-spacing: 1px;
 }
 
 .lightbox-desc {
@@ -1116,6 +1078,48 @@ ul {
   line-height: 1.8;
   margin-bottom: 24px;
   font-style: italic;
+}
+
+/* ============================================
+   CLIENTS
+   ============================================ */
+.clients {
+  background: var(--white);
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 16px;
+  align-items: center;
+}
+
+.client-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 32px 16px;
+  border: 1px solid var(--gray-100);
+  border-radius: var(--radius-lg);
+  text-align: center;
+  transition: var(--transition);
+}
+
+.client-logo span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gray-400);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  line-height: 1.4;
+}
+
+.client-logo:hover {
+  border-color: var(--black);
+}
+
+.client-logo:hover span {
+  color: var(--black);
 }
 
 .testimonial-author {
@@ -1642,56 +1646,53 @@ ul {
   display: block;
 }
 
-/* Form Success Overlay */
-.form-success {
-  position: absolute;
-  inset: 0;
-  background: var(--white);
-  border-radius: var(--radius-lg);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 40px;
-  opacity: 0;
-  visibility: hidden;
-  transform: scale(0.95);
-  transition: var(--transition);
-  z-index: 5;
-}
-
-.form-success.show {
-  opacity: 1;
-  visibility: visible;
-  transform: scale(1);
-}
-
-.form-success .success-icon {
-  width: 80px;
-  height: 80px;
-  background: var(--gray-50);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 24px;
-  color: var(--black);
-}
-
-.form-success h3 {
-  font-family: var(--font-serif);
-  font-size: 1.5rem;
-  color: var(--black);
-  margin-bottom: 12px;
-}
-
-.form-success p {
+/* Toast Notification */
+.toast {
+  position: fixed;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%) translateY(20px);
+  padding: 16px 24px;
+  border-radius: 12px;
   font-size: 0.9rem;
-  color: var(--gray-500);
-  line-height: 1.7;
-  margin-bottom: 24px;
-  max-width: 360px;
+  font-weight: 500;
+  color: var(--white);
+  opacity: 0;
+  transition: all 0.3s ease;
+  z-index: 2000;
+  max-width: 90vw;
+  text-align: center;
+  pointer-events: none;
+}
+
+.toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.toast-success {
+  background: #16a34a;
+}
+
+.toast-error {
+  background: #dc2626;
+}
+
+/* Button Spinner */
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255,255,255,0.3);
+  border-top-color: var(--white);
+  border-radius: 50%;
+  animation: spin 0.6s linear infinite;
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 
 .contact-form-wrapper {
@@ -1731,6 +1732,10 @@ ul {
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1866,10 +1871,6 @@ ul {
     font-size: 0.65rem;
   }
 
-  .hero-scroll {
-    bottom: 24px;
-  }
-
   .about-grid {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -1957,6 +1958,15 @@ ul {
   .portfolio-view {
     font-size: 0.7rem;
     padding: 6px 16px;
+  }
+
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  .client-logo {
+    padding: 24px 12px;
   }
 
   .process-timeline {
@@ -2076,12 +2086,17 @@ ul {
     gap: 8px;
   }
 
-  .stat-card {
-    padding: 20px 16px;
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
   }
 
-  .hero-scroll {
-    display: none;
+  .client-logo {
+    padding: 20px 8px;
+  }
+
+  .stat-card {
+    padding: 20px 16px;
   }
 
   .whatsapp-float {
@@ -2171,17 +2186,6 @@ ul {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--gray-400);
-}
-
-/* ============================================
-   SHAKE ANIMATION
-   ============================================ */
-@keyframes shake {
-  0%, 100% { transform: translateX(0); }
-  20% { transform: translateX(-6px); }
-  40% { transform: translateX(6px); }
-  60% { transform: translateX(-4px); }
-  80% { transform: translateX(4px); }
 }
 
 /* ============================================

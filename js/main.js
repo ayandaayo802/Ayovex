@@ -82,36 +82,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- ANIMATED COUNTERS ----
   const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-  let countersStarted = false;
-
-  const counterObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting && !countersStarted) {
-        countersStarted = true;
-        animateCounters();
-      }
-    });
-  }, { threshold: 0.5 });
-
-  document.querySelectorAll('.stats-grid').forEach(el => counterObserver.observe(el));
-
-  function animateCounters() {
-    statNumbers.forEach(num => {
-      const target = parseInt(num.getAttribute('data-count'));
-      const duration = 2000;
-      const start = performance.now();
-
-      function update(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        num.textContent = Math.floor(eased * target);
-        if (progress < 1) requestAnimationFrame(update);
-        else num.textContent = target;
-      }
-      requestAnimationFrame(update);
-    });
-  }
+  statNumbers.forEach(num => {
+    num.textContent = num.getAttribute('data-count');
+  });
 
   // ---- PORTFOLIO FILTERS ----
   const filterBtns = document.querySelectorAll('.filter-btn');
@@ -140,6 +113,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const lightboxTitle = document.getElementById('lightbox-title');
   const lightboxLocation = document.getElementById('lightbox-location');
   const lightboxDesc = document.getElementById('lightbox-desc');
+  const lightboxIndex = document.getElementById('lightbox-index');
   const lightboxClose = document.querySelector('.lightbox-close');
   const lightboxPrev = document.querySelector('.lightbox-prev');
   const lightboxNext = document.querySelector('.lightbox-next');
@@ -180,6 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     lightboxLocation.textContent = project.location;
     lightboxDesc.textContent = project.desc;
     lightboxImg.src = project.img;
+    lightboxIndex.textContent = `${currentProject + 1} / ${projects.length}`;
     lightbox.classList.add('active');
     document.body.style.overflow = 'hidden';
   }
@@ -211,6 +186,19 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.key === 'ArrowRight') lightboxNext.click();
   });
 
+  // ---- LIGHTBOX TOUCH SWIPE ----
+  let lbTouchX = 0;
+  lightboxImg.addEventListener('touchstart', (e) => {
+    lbTouchX = e.changedTouches[0].screenX;
+  }, { passive: true });
+  lightboxImg.addEventListener('touchend', (e) => {
+    const diff = e.changedTouches[0].screenX - lbTouchX;
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) lightboxPrev.click();
+      else lightboxNext.click();
+    }
+  }, { passive: true });
+
   // ---- TESTIMONIALS CAROUSEL ----
   const track = document.getElementById('testimonialTrack');
   const dotsContainer = document.getElementById('testimonialDots');
@@ -218,7 +206,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const nextBtn = document.querySelector('.testimonial-next');
   let currentSlide = 0;
   let slidesPerView = 3;
-  let autoPlayInterval;
 
   function updateSlidesPerView() {
     if (window.innerWidth <= 768) slidesPerView = 1;
@@ -256,30 +243,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
   prevBtn.addEventListener('click', () => {
     goToSlide(currentSlide - 1);
-    resetAutoPlay();
   });
 
   nextBtn.addEventListener('click', () => {
     goToSlide(currentSlide + 1);
-    resetAutoPlay();
   });
-
-  function startAutoPlay() {
-    autoPlayInterval = setInterval(() => {
-      const total = getTotalSlides();
-      goToSlide((currentSlide + 1) % total);
-    }, 5000);
-  }
-
-  function resetAutoPlay() {
-    clearInterval(autoPlayInterval);
-    startAutoPlay();
-  }
 
   updateSlidesPerView();
   buildDots();
   goToSlide(0);
-  startAutoPlay();
 
   // ---- TESTIMONIAL TOUCH SWIPE ----
   let touchStartX = 0;
@@ -307,7 +279,6 @@ document.addEventListener('DOMContentLoaded', () => {
     if (Math.abs(diff) > 50) {
       if (diff > 0) goToSlide(currentSlide - 1);
       else goToSlide(currentSlide + 1);
-      resetAutoPlay();
     } else {
       goToSlide(currentSlide);
     }
@@ -335,8 +306,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // ---- CONTACT FORM ----
   const contactForm = document.getElementById('contactForm');
-  const formSuccess = document.getElementById('formSuccess');
-  const successClose = document.getElementById('successClose');
   const submitBtn = contactForm.querySelector('button[type="submit"]');
 
   const serviceLabels = {
@@ -378,12 +347,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!allValid) {
       const firstError = contactForm.querySelector('.error');
-      if (firstError) {
-        firstError.focus();
-        firstError.style.animation = 'none';
-        firstError.offsetHeight;
-        firstError.style.animation = 'shake 0.4s ease';
-      }
+      if (firstError) firstError.focus();
       return;
     }
 
@@ -392,7 +356,7 @@ document.addEventListener('DOMContentLoaded', () => {
     data.service = serviceLabels[data.service] || data.service;
 
     submitBtn.disabled = true;
-    submitBtn.textContent = 'Sending...';
+    submitBtn.innerHTML = '<span class="spinner"></span> Sending...';
 
     fetch('https://jedccblbeowvvucauxqp.supabase.co/functions/v1/send-quote', {
       method: 'POST',
@@ -402,25 +366,35 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(res => res.json())
     .then(result => {
       if (result.success) {
-        formSuccess.classList.add('show');
+        showToast('Quote request sent successfully! We\'ll get back to you within 24 hours.', 'success');
         contactForm.reset();
       } else {
-        alert(result.error || 'Failed to send. Please try again.');
+        showToast(result.error || 'Failed to send. Please try again.', 'error');
       }
     })
     .catch(() => {
-      alert('Network error. Please try again or contact us directly.');
+      showToast('Network error. Please try again or contact us directly.', 'error');
     })
     .finally(() => {
       submitBtn.disabled = false;
-      submitBtn.textContent = 'Submit Quote Request';
+      submitBtn.innerHTML = 'Submit Quote Request';
     });
   });
 
-  // Close success message
-  successClose.addEventListener('click', () => {
-    formSuccess.classList.remove('show');
-  });
+  // ---- TOAST NOTIFICATION ----
+  function showToast(message, type) {
+    const existing = document.querySelector('.toast');
+    if (existing) existing.remove();
+    const toast = document.createElement('div');
+    toast.className = `toast toast-${type}`;
+    toast.textContent = message;
+    document.body.appendChild(toast);
+    setTimeout(() => toast.classList.add('show'), 10);
+    setTimeout(() => {
+      toast.classList.remove('show');
+      setTimeout(() => toast.remove(), 300);
+    }, 4000);
+  }
 
   // ---- MOBILE CALL BUTTON ----
   const callFloat = document.querySelector('.call-float');
@@ -445,15 +419,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- PARALLAX HERO ----
-  const heroBg = document.querySelector('.hero-bg');
-  window.addEventListener('scroll', () => {
-    if (window.scrollY < window.innerHeight) {
-      heroBg.style.transform = `scale(1.05) translateY(${window.scrollY * 0.3}px)`;
-    }
-  });
-
-});
 
 // ---- FADE IN UP KEYFRAME (injected) ----
 const style = document.createElement('style');
