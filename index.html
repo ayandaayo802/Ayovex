@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Ayovex Interior - Premium luxury interior design, custom-built furniture, TV wall units, wardrobes, kitchens, and complete home renovations.">
+  <meta name="keywords" content="interior design, luxury interiors, custom furniture, TV wall units, wardrobes, kitchen design, home renovation">
+  <meta name="author" content="Ayovex Interior">
+  <title>Ayovex Interior | Crafting Luxury Interiors</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Loading Screen -->
+  <div id="loader" class="loader">
+    <div class="loader-content">
+      <div class="loader-logo">AYOVEX</div>
+      <div class="loader-sub">INTERIOR</div>
+      <div class="loader-bar"><div class="loader-bar-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <a href="https://wa.me/27000000000" target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor" width="28" height="28"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+
+  <!-- Floating Call (Mobile) -->
+  <a href="tel:+27000000000" class="call-float" aria-label="Call Us">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+  </a>
+
+  <!-- Scroll to Top -->
+  <button id="scrollTop" class="scroll-top" aria-label="Scroll to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M18 15l-6-6-6 6"/></svg>
+  </button>
+
+  <!-- Navigation -->
+  <nav id="navbar" class="navbar">
+    <div class="nav-container">
+      <a href="#home" class="nav-logo">
+        <span class="logo-main">AYOVEX</span>
+        <span class="logo-sub">INTERIOR</span>
+      </a>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active">Home</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#services" class="nav-link">Services</a></li>
+        <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
+        <li><a href="#process" class="nav-link">Process</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li><a href="#contact" class="nav-cta">Get Quote</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="hero-bg" style="background-image: url('images/hero/hero-bg.jpg');"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content" data-animate="fade-up">
+      <p class="hero-tag">Premium Interior Design</p>
+      <h1 class="hero-title">Crafting Luxury Interiors<br>That Feel Like Home</h1>
+      <p class="hero-subtitle">From custom-built wardrobes to modern TV wall units, kitchens, ceilings and complete interior transformations.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get Free Quote</a>
+        <a href="#portfolio" class="btn btn-outline">View Our Work</a>
+        <a href="tel:+27000000000" class="btn btn-outline hero-call">Call Now</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll Down</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-content" data-animate="fade-right">
+          <p class="section-tag">About Us</p>
+          <h2 class="section-title">A Decade of Crafting<br>Exceptional Interiors</h2>
+          <p class="about-text">Ayovex Interior is a premier interior design company dedicated to transforming ordinary spaces into extraordinary living experiences. With over a decade of expertise, we combine artistic vision with meticulous craftsmanship to deliver interiors that are both stunning and functional.</p>
+          <p class="about-text">Our team of skilled craftsmen and designers work exclusively with premium materials, ensuring every project reflects our commitment to quality and attention to detail. From concept to completion, we handle every aspect of your interior transformation with precision and care.</p>
+          <div class="about-features">
+            <div class="about-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Premium Materials</span>
+            </div>
+            <div class="about-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Custom Solutions</span>
+            </div>
+            <div class="about-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Skilled Craftsmen</span>
+            </div>
+            <div class="about-feature">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 6L9 17l-5-5"/></svg>
+              <span>Customer Satisfaction</span>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual" data-animate="fade-left">
+          <img src="images/about/about.jpg" alt="Ayovex Interior team" class="about-image">
+        </div>
+      </div>
+      <div class="stats-grid" data-animate="fade-up">
+        <div class="stat-card">
+          <div class="stat-number" data-count="200">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">Projects Completed</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="150">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">Happy Clients</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="10">0</div>
+          <div class="stat-plus">+</div>
+          <div class="stat-label">Years Experience</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number" data-count="100">0</div>
+          <div class="stat-plus">%</div>
+          <div class="stat-label">Custom Designs</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="section services">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <p class="section-tag">Our Services</p>
+        <h2 class="section-title">Comprehensive Interior<br>Solutions</h2>
+        <p class="section-desc">We offer a full range of interior design and fabrication services tailored to your unique vision.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card" data-animate="fade-up" data-delay="0">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M20 7H4a2 2 0 00-2 2v10a2 2 0 002 2h16a2 2 0 002-2V9a2 2 0 00-2-2z"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3>Built-in Wardrobes</h3>
+          <p>Custom-designed wardrobes that maximize space and elegance in every room.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="100">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+          </div>
+          <h3>Luxury TV Wall Units</h3>
+          <p>Statement TV units with LED lighting, floating shelves, and modern finishes.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="200">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+          </div>
+          <h3>Kitchen Cabinets</h3>
+          <p>Modern kitchen designs with premium cabinetry and smart storage solutions.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="300">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M2 4v16M2 8h18a2 2 0 012 2v10M2 17h20M6 8v9a1 1 0 001 1h1a1 1 0 001-1V8"/></svg>
+          </div>
+          <h3>Bedroom Cupboards</h3>
+          <p>Elegant bedroom storage with personalized layouts and premium finishes.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="400">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M4 6h16M4 12h16M4 18h10"/></svg>
+          </div>
+          <h3>Floating Shelves</h3>
+          <p>Minimalist floating shelves that add style and functionality to any space.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="500">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h3>Ceiling Designs</h3>
+          <p>Designer ceilings with LED integration, dropped panels, and modern aesthetics.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="600">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v2"/></svg>
+          </div>
+          <h3>Office Interiors</h3>
+          <p>Professional office spaces designed for productivity and sophistication.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="700">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3>Reception Areas</h3>
+          <p>Impressive reception designs that reflect your brand's identity and values.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="800">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M4 12h16M4 12V4h16v8M8 12v8M16 12v8"/></svg>
+          </div>
+          <h3>Bathroom Vanities</h3>
+          <p>Luxurious bathroom vanities with premium countertops and modern fixtures.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="900">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 3v18"/></svg>
+          </div>
+          <h3>Wall Panels</h3>
+          <p>Decorative wall panels that transform plain walls into stunning features.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="1000">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14,2 14,8 20,8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+          </div>
+          <h3>Home Renovations</h3>
+          <p>Complete home transformations from single rooms to entire properties.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+        <div class="service-card" data-animate="fade-up" data-delay="1100">
+          <div class="service-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h3>Commercial Design</h3>
+          <p>End-to-end commercial interior design for offices, retail, and hospitality.</p>
+          <a href="#contact" class="service-link">Learn More &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="section portfolio">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <p class="section-tag">Our Work</p>
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-desc">A showcase of our finest interior design and fabrication projects.</p>
+      </div>
+      <div class="portfolio-filters" data-animate="fade-up">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="living">Living Rooms</button>
+        <button class="filter-btn" data-filter="bedroom">Bedrooms</button>
+        <button class="filter-btn" data-filter="kitchen">Kitchens</button>
+        <button class="filter-btn" data-filter="office">Offices</button>
+        <button class="filter-btn" data-filter="tv">TV Units</button>
+        <button class="filter-btn" data-filter="wardrobe">Wardrobes</button>
+        <button class="filter-btn" data-filter="commercial">Commercial</button>
+      </div>
+      <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="living" data-animate="fade-up">
+          <div class="portfolio-image">
+            <img src="images/portfolio/portfolio-1.jpg" alt="Modern Living Room" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Modern Living Room</h4>
+              <p>Umhlanga, Durban</p>
+              <button class="portfolio-view" data-index="0">View Project</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="tv" data-animate="fade-up">
+          <div class="portfolio-image">
+            <img src="images/portfolio/portfolio-2.jpg" alt="Luxury TV Unit" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Luxury TV Unit</h4>
+              <p>Durban North</p>
+              <button class="portfolio-view" data-index="1">View Project</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="kitchen" data-animate="fade-up">
+          <div class="portfolio-image">
+            <img src="images/portfolio/portfolio-3.jpg" alt="Modern Kitchen" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Modern Kitchen</h4>
+              <p>Ballito</p>
+              <button class="portfolio-view" data-index="2">View Project</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="bedroom" data-animate="fade-up">
+          <div class="portfolio-image">
+            <img src="images/portfolio/portfolio-4.jpg" alt="Luxury Bedroom Suite" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Luxury Bedroom Suite</h4>
+              <p>Durban</p>
+              <button class="portfolio-view" data-index="3">View Project</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="wardrobe" data-animate="fade-up">
+          <div class="portfolio-image">
+            <img src="images/portfolio/portfolio-5.jpg" alt="Walk-in Closet" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Walk-in Closet</h4>
+              <p>Waterfall, Durban</p>
+              <button class="portfolio-view" data-index="4">View Project</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="office" data-animate="fade-up">
+          <div class="portfolio-image">
+            <img src="images/portfolio/portfolio-6.jpg" alt="Corporate Office" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Corporate Office</h4>
+              <p>Durban CBD</p>
+              <button class="portfolio-view" data-index="5">View Project</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="commercial" data-animate="fade-up">
+          <div class="portfolio-image">
+            <img src="images/portfolio/portfolio-7.jpg" alt="Retail Space" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Retail Space</h4>
+              <p>Pavilion Mall, Durban</p>
+              <button class="portfolio-view" data-index="6">View Project</button>
+            </div>
+          </div>
+        </div>
+        <div class="portfolio-item" data-category="living" data-animate="fade-up">
+          <div class="portfolio-image">
+            <img src="images/portfolio/portfolio-8.jpg" alt="Open Plan Living" class="portfolio-img">
+            <div class="portfolio-overlay">
+              <h4>Open Plan Living</h4>
+              <p>Glenwood, Durban</p>
+              <button class="portfolio-view" data-index="7">View Project</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="lightbox">
+    <button class="lightbox-close" aria-label="Close">&times;</button>
+    <div class="lightbox-content">
+      <div class="lightbox-image">
+        <img id="lightbox-img" src="" alt="Project image" class="lightbox-img">
+      </div>
+      <div class="lightbox-info">
+        <h3 id="lightbox-title">Project Title</h3>
+        <p id="lightbox-location" class="lightbox-location">Location</p>
+        <p id="lightbox-desc" class="lightbox-desc">Project description goes here with details about the design, materials used, and the client's vision.</p>
+        <div class="lightbox-nav">
+          <button class="lightbox-prev" aria-label="Previous">&larr; Prev</button>
+          <button class="lightbox-next" aria-label="Next">Next &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Process Section -->
+  <section id="process" class="section process">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <p class="section-tag">How It Works</p>
+        <h2 class="section-title">Our Process</h2>
+        <p class="section-desc">A seamless journey from initial concept to final installation.</p>
+      </div>
+      <div class="process-timeline">
+        <div class="process-step" data-animate="fade-up">
+          <div class="step-number">01</div>
+          <div class="step-content">
+            <h3>Consultation</h3>
+            <p>We discuss your vision, preferences, budget, and requirements to understand exactly what you need.</p>
+          </div>
+        </div>
+        <div class="process-step" data-animate="fade-up">
+          <div class="step-number">02</div>
+          <div class="step-content">
+            <h3>Site Visit</h3>
+            <p>Our team visits your space to take measurements, assess the layout, and identify design opportunities.</p>
+          </div>
+        </div>
+        <div class="process-step" data-animate="fade-up">
+          <div class="step-number">03</div>
+          <div class="step-content">
+            <h3>Design Proposal</h3>
+            <p>We create detailed 3D designs and plans for your approval, with material samples and color options.</p>
+          </div>
+        </div>
+        <div class="process-step" data-animate="fade-up">
+          <div class="step-number">04</div>
+          <div class="step-content">
+            <h3>Manufacturing</h3>
+            <p>Our craftsmen build your custom pieces in our workshop using premium materials and precise techniques.</p>
+          </div>
+        </div>
+        <div class="process-step" data-animate="fade-up">
+          <div class="step-number">05</div>
+          <div class="step-content">
+            <h3>Installation</h3>
+            <p>Professional installation by our experienced team, ensuring perfect fit and flawless finishing.</p>
+          </div>
+        </div>
+        <div class="process-step" data-animate="fade-up">
+          <div class="step-number">06</div>
+          <div class="step-content">
+            <h3>Final Inspection</h3>
+            <p>We conduct a thorough quality check together to ensure every detail meets your expectations.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section id="why" class="section why">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <p class="section-tag">Why Ayovex</p>
+        <h2 class="section-title">Why Choose Us</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          </div>
+          <h4>Premium Materials</h4>
+          <p>We use only the finest materials sourced from trusted suppliers.</p>
+        </div>
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg>
+          </div>
+          <h4>Custom Designs</h4>
+          <p>Every piece is designed specifically for your space and style.</p>
+        </div>
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+          </div>
+          <h4>Affordable Pricing</h4>
+          <p>Luxury results without the luxury price tag. Transparent quotes.</p>
+        </div>
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87M16 3.13a4 4 0 010 7.75"/></svg>
+          </div>
+          <h4>Experienced Team</h4>
+          <p>Over a decade of combined experience in luxury interior design.</p>
+        </div>
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+          </div>
+          <h4>Attention to Detail</h4>
+          <p>Every joint, finish, and alignment is perfected before delivery.</p>
+        </div>
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+          </div>
+          <h4>On-Time Delivery</h4>
+          <p>We respect your timeline and deliver projects on schedule.</p>
+        </div>
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg>
+          </div>
+          <h4>After-Sales Support</h4>
+          <p>We're here for you even after the project is complete.</p>
+        </div>
+        <div class="why-card" data-animate="fade-up">
+          <div class="why-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h4>Quality Guarantee</h4>
+          <p>Every project comes with our comprehensive quality warranty.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="section testimonials">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <p class="section-tag">Testimonials</p>
+        <h2 class="section-title">What Our Clients Say</h2>
+      </div>
+      <div class="testimonial-carousel" data-animate="fade-up">
+        <div class="testimonial-track" id="testimonialTrack">
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"Ayovex transformed our living room into something straight out of a magazine. The TV unit and floating shelves exceeded our expectations. Professional, punctual, and incredibly talented."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">TS</div>
+              <div>
+                <strong>Thabo S.</strong>
+                <span>Umhlanga, Durban</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"Our new kitchen is absolutely stunning. The team was meticulous with every detail. From design to installation, the experience was seamless. Highly recommend!"</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">NM</div>
+              <div>
+                <strong>Naledi M.</strong>
+                <span>Ballito</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"The walk-in closet they built for us is a dream come true. Premium quality, smart design, and finished ahead of schedule. We couldn't be happier with the result."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">PK</div>
+              <div>
+                <strong>Pieter K.</strong>
+                <span>Waterfall, Durban</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"We renovated our entire office with Ayovex. The reception area and boardroom look incredible. Our clients are always impressed when they walk in."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">LW</div>
+              <div>
+                <strong>Lerato W.</strong>
+                <span>Durban CBD</span>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card">
+            <div class="testimonial-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+            <p class="testimonial-text">"From the first consultation to the final inspection, everything was handled with utmost professionalism. The bedroom wardrobes are beautifully crafted. Worth every cent."</p>
+            <div class="testimonial-author">
+              <div class="testimonial-avatar">AB</div>
+              <div>
+                <strong>Amahle B.</strong>
+                <span>Glenwood, Durban</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="testimonial-controls">
+          <button class="testimonial-prev" aria-label="Previous testimonial">&larr;</button>
+          <div class="testimonial-dots" id="testimonialDots"></div>
+          <button class="testimonial-next" aria-label="Next testimonial">&rarr;</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section id="faq" class="section faq">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <p class="section-tag">FAQ</p>
+        <h2 class="section-title">Frequently Asked Questions</h2>
+      </div>
+      <div class="faq-list" data-animate="fade-up">
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How long does installation take?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6,9 12,15 18,9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Installation timelines vary depending on the project scope. A single wardrobe typically takes 2-3 days, while a full kitchen renovation may take 2-3 weeks. We provide a detailed timeline during the design proposal phase.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you offer free quotations?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6,9 12,15 18,9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, we offer completely free consultations and quotations. Contact us to schedule a site visit and we'll provide a detailed, no-obligation quote within 48 hours.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can you customize designs?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6,9 12,15 18,9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Absolutely. Every project we undertake is fully custom-designed to match your specific requirements, space dimensions, and personal style. We don't use templates.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Which areas do you service?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6,9 12,15 18,9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>We service Durban, Umhlanga, Ballito, Pinetown, Westville, Waterfall, Glenwood, and surrounding areas. Contact us to confirm availability in your specific location.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>What materials do you use?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6,9 12,15 18,9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>We use premium-grade MDF, solid wood, melamine, granite, marble, and high-quality hardware. All materials are sourced from trusted suppliers and come with manufacturer warranties.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Do you provide warranties?</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="6,9 12,15 18,9"/></svg>
+          </button>
+          <div class="faq-answer">
+            <p>Yes, all our projects come with a comprehensive warranty covering craftsmanship and materials. We also offer after-sales support for any adjustments or concerns.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="section contact">
+    <div class="container">
+      <div class="section-header" data-animate="fade-up">
+        <p class="section-tag">Get In Touch</p>
+        <h2 class="section-title">Request a Free Quote</h2>
+        <p class="section-desc">Tell us about your project and we'll get back to you within 24 hours.</p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-form-wrapper" data-animate="fade-right">
+          <form class="contact-form" id="contactForm">
+            <div class="form-group">
+              <input type="text" id="name" name="name" placeholder=" " required>
+              <label for="name">Full Name</label>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="tel" id="phone" name="phone" placeholder=" " required>
+                <label for="phone">Phone Number</label>
+              </div>
+              <div class="form-group">
+                <input type="email" id="email" name="email" placeholder=" " required>
+                <label for="email">Email Address</label>
+              </div>
+            </div>
+            <div class="form-group">
+              <select id="service" name="service" required>
+                <option value="" disabled selected>Select Service Needed</option>
+                <option value="wardrobes">Built-in Wardrobes</option>
+                <option value="tv-units">Luxury TV Wall Units</option>
+                <option value="kitchens">Kitchen Cabinets</option>
+                <option value="bedroom">Bedroom Cupboards</option>
+                <option value="shelves">Floating Shelves</option>
+                <option value="ceilings">Ceiling Designs</option>
+                <option value="office">Office Interiors</option>
+                <option value="reception">Reception Areas</option>
+                <option value="bathroom">Bathroom Vanities</option>
+                <option value="panels">Wall Panels</option>
+                <option value="renovations">Home Renovations</option>
+                <option value="commercial">Commercial Design</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <input type="date" id="date" name="date">
+              <label for="date" class="date-label">Preferred Date</label>
+            </div>
+            <div class="form-group">
+              <textarea id="message" name="message" rows="4" placeholder=" " required></textarea>
+              <label for="message">Your Message</label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-full">Submit Quote Request</button>
+          </form>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22,4 12,14.01 9,11.01"/></svg>
+            </div>
+            <h3>Thank You!</h3>
+            <p>Your quote request has been sent. We'll get back to you within 24 hours.</p>
+            <button class="btn btn-primary" id="successClose">Got It</button>
+          </div>
+        </div>
+        <div class="contact-info" data-animate="fade-left">
+          <div class="contact-info-card">
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/></svg>
+              </div>
+              <div>
+                <strong>Phone</strong>
+                <a href="tel:+27000000000">+27 00 000 0000</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+              </div>
+              <div>
+                <strong>WhatsApp</strong>
+                <a href="https://wa.me/27000000000" target="_blank">+27 00 000 0000</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </div>
+              <div>
+                <strong>Email</strong>
+                <a href="mailto:info@ayovexinterio.co.za">info@ayovexinterio.co.za</a>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              </div>
+              <div>
+                <strong>Address</strong>
+                <span>Durban, South Africa</span>
+              </div>
+            </div>
+            <div class="contact-detail">
+              <div class="contact-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="22" height="22"><circle cx="12" cy="12" r="10"/><polyline points="12,6 12,12 16,14"/></svg>
+              </div>
+              <div>
+                <strong>Business Hours</strong>
+                <span>Mon - Fri: 8:00 AM - 5:00 PM</span>
+                <span>Sat: 9:00 AM - 1:00 PM</span>
+              </div>
+            </div>
+          </div>
+          <div class="contact-map">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d114627.61173686388!2d29.8711988!3d-29.8586822!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1ef814d4b4c4e1a5%3A0x4cd9e73a8e2dd867!2sDurban%2C%20KwaZulu-Natal%2C%20South%20Africa!5e0!3m2!1sen!2s!4v1234567890" width="100%" height="250" style="border:0; border-radius: 12px;" allowfullscreen="" loading="lazy" title="Ayovex Interior Location"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-main">AYOVEX</span>
+            <span class="logo-sub">INTERIOR</span>
+          </div>
+          <p>Premium interior design and fabrication. Crafting luxury spaces that inspire and delight.</p>
+          <div class="footer-social">
+            <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+            <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5"/></svg></a>
+            <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2zM4 2a2 2 0 110 4 2 2 0 010-4z"/></svg></a>
+            <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19.1c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.43z"/><polygon points="9.75,15.02 15.5,11.75 9.75,8.48" fill="white"/></svg></a>
+          </div>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#process">Process</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="#services">Built-in Wardrobes</a></li>
+            <li><a href="#services">TV Wall Units</a></li>
+            <li><a href="#services">Kitchen Cabinets</a></li>
+            <li><a href="#services">Ceiling Designs</a></li>
+            <li><a href="#services">Office Interiors</a></li>
+            <li><a href="#services">Home Renovations</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Contact</h4>
+          <ul>
+            <li>Durban, South Africa</li>
+            <li><a href="tel:+27000000000">+27 00 000 0000</a></li>
+            <li><a href="mailto:info@ayovexinterio.co.za">info@ayovexinterio.co.za</a></li>
+            <li>Mon - Fri: 8AM - 5PM</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Ayovex Interior. All rights reserved.</p>
+        <div class="footer-legal">
+          <a href="privacy-policy.html">Privacy Policy</a>
+          <a href="terms-conditions.html">Terms & Conditions</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

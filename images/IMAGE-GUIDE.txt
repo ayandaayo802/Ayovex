@@ -1,0 +1,110 @@
+===============================================
+  AYOVEX INTERIOR - IMAGE GUIDE
+===============================================
+
+Put your images in the correct folders and rename
+them exactly as listed below. Use JPG or PNG format.
+
+
+-----------------------------------------------
+  FOLDER: images/hero/
+-----------------------------------------------
+
+  hero-bg.jpg
+  → Full-width luxury living room with custom TV unit
+     LED lighting, floating shelves, modern interior
+  → Recommended size: 1920x1080px or larger
+  → This is the main hero background on the homepage
+
+
+-----------------------------------------------
+  FOLDER: images/about/
+-----------------------------------------------
+
+  about.jpg
+  → Your team at work, workshop, or craftsmanship shot
+  → Recommended size: 800x1000px
+  → Shows in the About section
+
+
+-----------------------------------------------
+  FOLDER: images/portfolio/
+-----------------------------------------------
+
+  portfolio-1.jpg
+  → Living Room - Modern living room with custom furniture
+  → Recommended: 800x800px square
+
+  portfolio-2.jpg
+  → TV Unit - Luxury TV wall unit with LED backlighting
+  → Recommended: 800x800px square
+
+  portfolio-3.jpg
+  → Kitchen - Modern kitchen with custom cabinets
+  → Recommended: 800x800px square
+
+  portfolio-4.jpg
+  → Bedroom - Luxury bedroom suite with built-in furniture
+  → Recommended: 800x800px square
+
+  portfolio-5.jpg
+  → Wardrobe - Walk-in closet with glass drawers
+  → Recommended: 800x800px square
+
+  portfolio-6.jpg
+  → Office - Corporate office interior design
+  → Recommended: 800x800px square
+
+  portfolio-7.jpg
+  → Commercial - Retail or reception area design
+  → Recommended: 800x800px square
+
+  portfolio-8.jpg
+  → Living Room 2 - Open plan living space
+  → Recommended: 800x800px square
+
+  optional-extra.jpg
+  → Any additional portfolio image you want to add
+  → You can add more portfolio items to the grid
+
+
+-----------------------------------------------
+  FOLDER: images/logo/
+-----------------------------------------------
+
+  logo.png
+  → Your Ayovex Interior logo (transparent background)
+  → Recommended size: 300x100px
+  → Replace the text logo in navbar with this image
+
+
+-----------------------------------------------
+  IMAGE TIPS
+-----------------------------------------------
+
+  - Use high-quality, well-lit photos
+  - Show your best work first
+  - Consistent editing style across all photos
+  - Square crops work best for the portfolio grid
+  - Avoid watermarked images
+  - Use compressed JPGs for fast loading
+  - Recommended max file size: 300KB per image
+  - Tools to compress: tinypng.com or squoosh.app
+
+
+-----------------------------------------------
+  AFTER ADDING IMAGES
+-----------------------------------------------
+
+  1. Place files in the correct folders
+  2. Tell me you've added the images
+  3. I will update the HTML code to use them
+  4. Or replace the placeholder divs yourself:
+
+     Before:
+     <div class="placeholder-img">...</div>
+
+     After:
+     <img src="images/hero/hero-bg.jpg" alt="Hero background">
+
+===============================================
