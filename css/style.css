@@ -557,7 +557,7 @@ ul {
 /* Stats */
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -607,7 +607,7 @@ ul {
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -738,7 +738,7 @@ ul {
 
 .portfolio-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -953,7 +953,7 @@ ul {
 
 .process-timeline {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 32px;
   position: relative;
 }
@@ -1017,7 +1017,7 @@ ul {
 
 .why-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -1421,7 +1421,7 @@ ul {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 1.5fr 1fr 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
   gap: 48px;
   padding-bottom: 60px;
   border-bottom: 1px solid var(--gray-800);
@@ -1727,14 +1727,6 @@ ul {
    RESPONSIVE
    ============================================ */
 @media (max-width: 1024px) {
-  .services-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  .portfolio-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   .why-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -1748,7 +1740,6 @@ ul {
   }
 
   .process-timeline {
-    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
 }
@@ -2077,21 +2068,8 @@ ul {
     font-size: 1.5rem;
   }
 
-  .services-grid {
-    grid-template-columns: 1fr;
-  }
-
   .portfolio-grid {
-    grid-template-columns: repeat(2, 1fr);
     gap: 8px;
-  }
-
-  .stats-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .why-grid {
-    grid-template-columns: 1fr;
   }
 
   .stat-card {
