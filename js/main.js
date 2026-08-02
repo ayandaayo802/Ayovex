@@ -331,6 +331,7 @@ document.addEventListener('DOMContentLoaded', () => {
     field.addEventListener('blur', () => validateField(field));
     field.addEventListener('input', () => {
       if (field.classList.contains('error')) validateField(field);
+      hideFormStatus();
     });
   });
 
@@ -363,14 +364,14 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(res => res.json())
     .then(result => {
       if (result.success) {
-        showToast('Quote request sent successfully! We\'ll get back to you within 24 hours.', 'success');
+        showFormStatus('Thank You', 'Your quote request has been received successfully. Our team will contact you within 24 hours.', 'success');
         contactForm.reset();
       } else {
-        showToast(result.error || 'Failed to send. Please try again.', 'error');
+        showFormStatus('Unable to Send', result.error || 'We could not process your request. Please try again.', 'error');
       }
     })
     .catch(() => {
-      showToast('Network error. Please try again or contact us directly.', 'error');
+      showFormStatus('Connection Issue', 'We could not reach the server. Please check your connection and try again, or contact us directly.', 'error');
     })
     .finally(() => {
       submitBtn.disabled = false;
@@ -378,19 +379,26 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // ---- TOAST NOTIFICATION ----
-  function showToast(message, type) {
-    const existing = document.querySelector('.toast');
-    if (existing) existing.remove();
-    const toast = document.createElement('div');
-    toast.className = `toast toast-${type}`;
-    toast.textContent = message;
-    document.body.appendChild(toast);
-    setTimeout(() => toast.classList.add('show'), 10);
-    setTimeout(() => {
-      toast.classList.remove('show');
-      setTimeout(() => toast.remove(), 300);
-    }, 4000);
+  // ---- FORM STATUS MESSAGE ----
+  const formStatus = document.getElementById('formStatus');
+
+  function showFormStatus(title, message, type) {
+    const icon = type === 'success'
+      ? '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><path d="M20 6L9 17l-5-5"/></svg>'
+      : '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="15" height="15"><path d="M18 6L6 18M6 6l12 12"/></svg>';
+    formStatus.className = `form-status form-status-${type} show`;
+    formStatus.innerHTML = `
+      <span class="form-status-icon">${icon}</span>
+      <span>
+        <span class="form-status-title">${title}</span>
+        <span class="form-status-message">${message}</span>
+      </span>`;
+    formStatus.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+  }
+
+  function hideFormStatus() {
+    formStatus.className = 'form-status';
+    formStatus.innerHTML = '';
   }
 
   // ---- MOBILE CALL BUTTON ----

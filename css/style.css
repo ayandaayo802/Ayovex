@@ -1649,35 +1649,64 @@ ul {
 }
 
 /* Toast Notification */
-.toast {
-  position: fixed;
-  bottom: 32px;
-  left: 50%;
-  transform: translateX(-50%) translateY(20px);
-  padding: 16px 24px;
-  border-radius: 12px;
-  font-size: 0.9rem;
-  font-weight: 500;
+.form-status {
+  display: none;
+  margin-top: 16px;
+  padding: 16px 18px;
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.form-status.show {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.form-status-icon {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--white);
-  opacity: 0;
-  transition: all 0.3s ease;
-  z-index: 2000;
-  max-width: 90vw;
-  text-align: center;
-  pointer-events: none;
 }
 
-.toast.show {
-  opacity: 1;
-  transform: translateX(-50%) translateY(0);
+.form-status-success {
+  background: #f0fdf4;
+  border: 1px solid #bbf7d0;
+  color: var(--gray-600);
 }
 
-.toast-success {
+.form-status-success .form-status-icon {
   background: #16a34a;
 }
 
-.toast-error {
+.form-status-error {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: var(--gray-600);
+}
+
+.form-status-error .form-status-icon {
   background: #dc2626;
+}
+
+.form-status-title {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--black);
+  margin-bottom: 2px;
+}
+
+.form-status-message {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--gray-500);
 }
 
 /* Button Spinner */
